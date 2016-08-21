@@ -15,6 +15,7 @@ public class Plane {
 		numEmptySeats = 12;
 	}
 	
+	// sort seats give you the whole array sorted, without any filters
 	public PlaneSeat[] sortSeats() {
 		PlaneSeat[] seatClone = seats.clone();
 		Arrays.sort(seatClone, new Comparator<PlaneSeat>() {
@@ -27,22 +28,45 @@ public class Plane {
 	}
 	
 	public void showNumEmptySeats() {
-		
+		System.out.println(String.format("There are %d empty seats.\n", numEmptySeats));
 	}
 	
 	public void showEmptySeats() {
-		
+		System.out.println("The following seats are empty.");
+		for (PlaneSeat ps : this.seats) {
+			if(!ps.isOccupied()) {
+				System.out.println(String.format("SeatID %d", ps.getSeatID()));
+			}
+		}
+		System.out.println();
 	}
 	
 	public void showAssignedSeats(boolean bySeatID) {
-		
+		PlaneSeat[] seatsToShow = (bySeatID)? this.seats : this.sortSeats();
+		System.out.println("The seat assignment are as follows:");
+		for(PlaneSeat ps : seatsToShow) {
+			if (ps.isOccupied()) {
+				System.out.println(String.format("SeatID %d assigned to CustomerID %d.", ps.getSeatID(), ps.getCustomerID()));
+			}
+		}
+		System.out.println();
 	}
 	
 	public void assignSeat(int seatID, int customerID) {
-		
+		if(!this.seats[seatID-1].isOccupied()) {
+			this.seats[seatID-1].assign(customerID);
+			numEmptySeats--;
+			System.out.println("Seat assigned!");
+		} else {
+			System.out.println("Seat already assigned!");
+		}
 	}
 	
 	public void unAssignSeat(int seatID) {
-		
+		if(this.seats[seatID-1].isOccupied()) {
+			this.seats[seatID-1].unAssign();
+			numEmptySeats++;
+		}
+		System.out.println("Seat unassigned!");
 	}
 }
