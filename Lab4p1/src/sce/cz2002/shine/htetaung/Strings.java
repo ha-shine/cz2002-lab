@@ -18,7 +18,7 @@ public class Strings {
 			stringList[i] = sc.nextLine();
 		}
 		
-		Sorting.selectionSort(stringList);
+		Sorting.selectionSortReverse(stringList);
 		System.out.println ("\nYour stringss in sorted order...");
 		
 		for(int i = 0; i < size; i++)

@@ -1,0 +1,40 @@
+package sce.cz2002.shine.htetaung.Shapes;
+
+import java.util.Scanner;
+
+public class Triangle2D extends Shape {
+
+	private int height;
+	private int base;
+	
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getBase() {
+		return base;
+	}
+
+	public void setBase(int base) {
+		this.base = base;
+	}
+
+	@Override
+	public double getArea() {
+		return this.height*this.base/2;
+	}
+
+	@Override
+	public void getDimension() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter height : ");
+		this.height = sc.nextInt();
+		System.out.print("Enter base : ");
+		this.base = sc.nextInt();
+	}
+
+}

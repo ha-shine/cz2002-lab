@@ -1,0 +1,18 @@
+package sce.cz2002.shine.htetaung.Shapes;
+
+public class Pyramid extends Shape {
+	
+	private int slant;
+	private Rectangle base;
+
+	@Override
+	public double getArea() {
+		return 0;
+	}
+
+	@Override
+	public void getDimension() {
+		// TODO Auto-generated method stub
+		
+	}
+}

@@ -1,0 +1,35 @@
+package sce.cz2002.shine.htetaung.Shapes;
+
+public class TwoDTriangle extends Shape {
+
+	private int height;
+	private int base;
+	
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getBase() {
+		return base;
+	}
+
+	public void setBase(int base) {
+		this.base = base;
+	}
+
+	@Override
+	public int getArea() {
+		return h*b/2;
+	}
+
+	@Override
+	public void getDimension() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

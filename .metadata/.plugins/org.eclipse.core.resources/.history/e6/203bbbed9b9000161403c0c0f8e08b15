@@ -1,0 +1,27 @@
+package sce.cz2002.shine.htetaung.Shapes;
+
+public class Circle2D extends Shape {
+	
+	private int radius;
+	
+	public int getRadius() {
+		return radius;
+	}
+
+	public void setRadius(int radius) {
+		this.radius = radius;
+	}
+
+	@Override
+	public int getArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void getDimension() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
